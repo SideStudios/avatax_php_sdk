@@ -85,7 +85,6 @@ abstract class AvaTaxRequest {
 	protected function _sendRequest()
 	{
 		$this->_setPostString();
-		//var_dump($this->_post_string);
 		$post_url = $this->_getPostUrl();
 		$curl_request = curl_init($post_url);
 		curl_setopt($curl_request, CURLOPT_USERPWD, $this->_api_account . ':' . $this->_api_license_key);
