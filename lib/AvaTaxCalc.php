@@ -51,7 +51,7 @@ class AvaTaxCalc extends AvaTaxRequest {
 	 * A list of all string fields in the API.
 	 * Used to warn user if they try to set a field not offered in the API.
 	 */
-	private $_string_fields = array("CustomerCode","DocDate","CompanyCode","Commit","CustomerUsageType",
+	private $_string_fields = array("CancelCode","CustomerCode","DocDate","CompanyCode","Commit","CustomerUsageType",
 		"Discount","DocCode","PurchaseOrderNo","ExemptionNo","DetailLevel","DocType",
 		"ReferenceCode","PosLaneCode","Client","TaxOverride","BusinessIdentificationNo");
 		  
@@ -118,8 +118,8 @@ class AvaTaxCalc extends AvaTaxRequest {
 
 		($CompanyCode ? $this->CompanyCode = $CompanyCode : null);
 		($DocCode ? $this->DocCode = $DocCode : null);
-		($DocType ? $this->DocType = $DocType : 'SalesInvoice');
-		($CancelCode ? $this->CancelCode = $CancelCode : 'DocVoided');
+		$this->DocType = $DocType ? $DocType : 'SalesInvoice';
+		$this->CancelCode = $CancelCode ? $CancelCode : 'DocVoided';
 
 		$this->_resource = 'tax/cancel';
 

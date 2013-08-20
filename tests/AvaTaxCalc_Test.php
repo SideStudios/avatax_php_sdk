@@ -92,4 +92,23 @@ class AvaTaxCalc_Sandbox_Test extends PHPUnit_Framework_TestCase
 
 	}
 
+	/**
+	 * Test cancel tax call 
+	 *
+	 * Should return success
+	 */
+	 public function testCancelTax() {
+
+		$tax = new AvaTaxCalc;
+
+		$r = rand(100, 200);
+
+		$this->testPostTax($r);
+		
+		$response = $tax->cancel("APITrialCompany", $r);
+
+		$this->assertEquals($response->status, 'Success');
+
+	}
+
 }
