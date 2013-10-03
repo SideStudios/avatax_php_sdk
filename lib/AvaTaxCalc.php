@@ -58,7 +58,7 @@ class AvaTaxCalc extends AvaTaxRequest {
 	/**
 	 * Alternative syntax for setting fields.
 	 *
-	 * Usage: $sale->method = "DoVoid";
+	 * Usage: $tax->CompanyCode = "Acme, Inc";
 	 *
 	 * @param string $name
 	 * @param string $value
